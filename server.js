@@ -16,6 +16,8 @@ app.get('/', function (request, response) {
     response.sendFile(indexHtml);
 });
 
+console.log('Quan ngu');
+
 app.use('/auth', routers);
 
 app.get('*', function (request, response) {
