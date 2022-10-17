@@ -6,18 +6,10 @@ const {
 } = require("firebase/app");
 
 const {
-    getAnalytics
-} = require("firebase/analytics");
-
-const {
     getDatabase,
     ref,
     set,
-    get,
-    child,
 } = require("firebase/database");
-
-
 
 const firebaseConfig = {
     apiKey: "AIzaSyDgpXMyrUwtruN61selQfMjLy7or96eRjE",
@@ -33,19 +25,20 @@ const firebaseConfig = {
 
 const database = getDatabase(initializeApp(firebaseConfig));
 
-router.post('/register', function (request, response) {
-    const email = request.body.email;
-    const fullName = request.body.fullname;
+router.post('/register', function (req, res) {
+    const email = req.body.email;
+    const fullName = req.body.fullname;
 
     const mailName = email.split('@')[0];
 
     if (!email || !fullName) {
-        response.status(404);
+        res.status(404);
     } else {
         set(ref(database, 'users/' + mailName), {
             mail: email,
             name: fullName,
         });
+        res.redirect('/');
     }
 })
 

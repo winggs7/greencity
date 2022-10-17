@@ -57,78 +57,11 @@
             </div>
             <div class="pollution__swiper swiper mySwiper">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="pollution__item">
-                            <div class="pollution__title">
-                                AIR
-                                <i class="icon fa-solid fa-wind"></i>
-                            </div>
-                            <div class="pollution__description">
-                                Air pollution is the contamination of air due to the presence of substances in the
-                                atmosphere that are harmful to the health of humans and other living beings, or cause
-                                damage to the climate or to materials. There are many different types of air pollutants,
-                                such as gases, particulates, and biological molecules.
-                            </div>
-                            <div class="pollution__statistic">
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="pollution__item">
-                            <div class="pollution__title">
-                                WATER
-                                <i class="icon fa-solid fa-water"></i>
-                            </div>
-                            <div class="pollution__description">
-                                Water pollution is the contamination of water bodies, usually as a result of human
-                                activities, so that it negatively affects its uses. Water bodies include lakes, rivers,
-                                oceans, aquifers, reservoirs and groundwater. Water pollution results when contaminants
-                                are introduced into these water bodies.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="pollution__item">
-                            <div class="pollution__title">
-                                NOISE
-                                <i class="icon fa-solid fa-headphones"></i>
-                            </div>
-                            <div class="pollution__description">
-                                Noise pollution can cause health problems for people and wildlife, both on land and in
-                                the sea. From traffic noise to rock concerts, loud or inescapable sounds can cause
-                                hearing loss, stress, and high blood pressure. Noise from ships and human activities in
-                                the ocean is harmful to whales and dolphins that depend on echolocation to survive.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="pollution__item">
-                            <div class="pollution__title">
-                                Light
-                                <i class="icon fa-regular fa-lightbulb"></i>
-                            </div>
-                            <div class="pollution__description">
-                                Light pollution is the presence of unwanted, inappropriate, or excessive artificial
-                                lighting. In a descriptive sense, the term light pollution refers to the effects of any
-                                poorly implemented lighting, during the day or night.
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="pollution__item">
-                            <div class="pollution__title">
-                                Land
-                                <i class="icon fa-solid fa-mountain-sun"></i>
-                            </div>
-                            <div class="pollution__description">
-                                Soil contamination, soil pollution, or land pollution as a part of land degradation is
-                                caused by the presence of xenobiotic chemicals or other alteration in the natural soil
-                                environment. It is typically caused by industrial activity, agricultural chemicals or
-                                improper disposal of waste.
-                            </div>
-                        </div>
-                    </div>
+                    <% if (pollutionData) { %>
+                        <% pollutionData.forEach(function(pollution){ %>
+                            <%- include('./layout/pollution', {pollution: pollution}); %>
+                                <% }); %>
+                                    <% } %>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>
@@ -144,7 +77,7 @@
                 <span class="form__description">
                     Register to get information!
                 </span>
-                <form class="form__green" method="POST" action="/auth/register">
+                <form class="form__green" method="POST" action="/register">
                     <div class="form__input">
                         <input id="register__email" name="email" type="email" placeholder="Email">
                     </div>
