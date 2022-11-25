@@ -1,7 +1,7 @@
 const express = require("express");
-const path = require('path');
 const app = express();
 var fs = require('fs');
+var http = require('http');
 
 const routers = require('./routers');
 
@@ -16,10 +16,12 @@ app.set("view engine", "ejs");
 
 app.get('/', function (req, res) {
     const pollutionData = JSON.parse(fs.readFileSync('data-pollution.json', 'utf8'));
+
     res.render("index.ejs", {
         pollutionData: Array.from(pollutionData.pollution)
     });
 });
+
 
 app.use('/', routers);
 

@@ -12,15 +12,14 @@ const {
 } = require("firebase/database");
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDgpXMyrUwtruN61selQfMjLy7or96eRjE",
-    authDomain: "example-ddee4.firebaseapp.com",
-    databaseURL: "https://example-ddee4-default-rtdb.firebaseio.com",
-    projectId: "example-ddee4",
-    storageBucket: "example-ddee4.appspot.com",
-    messagingSenderId: "441046704903",
-    appId: "1:441046704903:web:313db04f629b8fff2c1ba2",
-    measurementId: "G-FP5D73TH0C",
-    databaseURL: "https://example-ddee4-default-rtdb.firebaseio.com/",
+    apiKey: "AIzaSyB5w-9oEa--nxLUnrJqCWdDPuflNaPJ2wU",
+    authDomain: "example1-16a7b.firebaseapp.com",
+    projectId: "example1-16a7b",
+    storageBucket: "example1-16a7b.appspot.com",
+    messagingSenderId: "133160300996",
+    appId: "1:133160300996:web:4eb2b8d57984c8f08bb491",
+    measurementId: "G-ETDY17DKJP",
+    databaseURL: "https://example1-16a7b-default-rtdb.firebaseio.com/",
 };
 
 const database = getDatabase(initializeApp(firebaseConfig));
